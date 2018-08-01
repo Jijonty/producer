@@ -1,6 +1,6 @@
-package com.parkingtelecom.dto;
+package com.parkingtelecom.entity;
 
-public class ProducerDTO {
+public class ProducerEntity {
     private String exchange;
     private String routingKey;
     private Long messages;
