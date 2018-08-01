@@ -37,7 +37,9 @@ public class ProducerServiceImpl implements ProducerService {
             }
         });
 
-        log.info("Sending message "+producer.getPayload());
-        rabbitTemplate.convertAndSend(producer.getExchange(), producer.getRoutingKey(), producer.getPayload());
+        for(int i=0;i<producer.getMessages();i++) {
+            log.info("Sending message " + producer.getPayload());
+            rabbitTemplate.convertAndSend(producer.getExchange(), producer.getRoutingKey(), producer.getPayload());
+        }
     }
 }
